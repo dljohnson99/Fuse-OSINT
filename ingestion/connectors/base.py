@@ -19,7 +19,7 @@ from typing import Any, Iterable
 class RawRecord:
     """Mirrors docs/data-model.md RawRecord. Immutable once created."""
 
-    source_id: str
+    source_id : str
     source_type: str  # "news" | "government" | "corporate" | "geospatial" | "dataset"
     raw_content: str
     source_url: str | None = None
@@ -58,7 +58,7 @@ class BaseConnector(ABC):
     source_type: str
 
     @abstractmethod
-    def fetch(self) -> Iterable[str]:
+    def fetch(self) -> Iterable[tuple[str, str]]:
         """Retrieve raw payloads (e.g. article bodies, API response bodies).
 
         Must be safe to call repeatedly without side effects beyond network
@@ -102,9 +102,9 @@ class BaseConnector(ABC):
 
     def run(self) -> None:
         """Drives one full fetch->store cycle. Not meant to be overridden."""
-        for payload in self.fetch():
+        for source_id, payload in self.fetch():
             raw = RawRecord(
-                source_id=self.source_id,
+                source_id=source_id,
                 source_type=self.source_type,
                 raw_content=payload,
             )

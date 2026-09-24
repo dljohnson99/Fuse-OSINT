@@ -23,9 +23,9 @@ and legal boundaries the project operates within.
 
 | Phase | Focus | Status |
 |---|---|---|
-| 0 | Research & Architecture | 🔵 In progress |
-| 1 | Data Ingestion MVP | ⬜ Not started |
-| 2 | Common Data Model | ⬜ Not started |
+| 0 | Research & Architecture | 🟢 Completed |
+| 1 | Data Ingestion MVP | 🟢 Completed |
+| 2 | Common Data Model | 🔵 In Progress |
 | 3 | NLP Extraction | ⬜ Not started |
 | 4 | Entity Resolution | ⬜ Not started |
 | 5 | Knowledge Graph | ⬜ Not started |

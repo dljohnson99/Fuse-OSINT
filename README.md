@@ -60,4 +60,4 @@ Python (FastAPI) · PostgreSQL · Neo4j · React/TypeScript · spaCy/transformer
 
 ## License
 
-TBD (recommend MIT or Apache-2.0 for a portfolio project).
+MIT

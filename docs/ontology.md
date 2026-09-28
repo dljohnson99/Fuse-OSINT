@@ -8,7 +8,7 @@ extend only when a real source requires it (see project guide §23, item 1:
 
 | Type | Description | Example attributes |
 |---|---|---|
-| `Person` | A named individual | `role`, `dob` (if public) |
+| `Person` | A named individual | `role`, `dob`, `bioguide_id`, `party`, `state` (if public) |
 | `Organization` | Company, agency, nonprofit | `hq_location`, `industry` |
 | `Location` | City, region, address, coordinate | `lat`, `lon`, `admin_level` |
 | `Event` | A discrete occurrence (also see Event model) | `event_type` |
@@ -16,6 +16,8 @@ extend only when a real source requires it (see project guide §23, item 1:
 
 Deferred to later phases: `Facility`, `Vehicle` (§11 of project guide lists
 these — add once a source actually supplies them; don't model speculatively).
+
+A 'Document' can be a United States Congress Bill. It is a document with a stable ###-XX-#### form (congress, type, number), plus attributes for congress, bill type, and bill number. A 'Person' has expanded attributes to include those of Bill Sponsors.
 
 ## Relationship Types (MVP)
 
@@ -25,6 +27,7 @@ these — add once a source actually supplies them; don't model speculatively).
 | `located_at` | Organization \| Person | Location | physical presence |
 | `attended` | Person | Event | participation |
 | `mentioned_in` | Entity (any) | Document | co-occurrence / citation |
+| `sponsored` | Person | Document | primary sponsor of bill |
 
 Deferred: `owns`, `founded`, `acquired`, `contracted_with` — add in Phase 3
 once the NLP pipeline needs them for a real source, per project guide §12.

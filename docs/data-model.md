@@ -79,7 +79,7 @@ Evidence
 ├── id                UUID
 ├── document_id         FK → Document
 ├── span_start / span_end   int (nullable) -- character offsets of the supporting text
-├── extraction_method    text  -- e.g. "spacy_ner", "manual", "rule_pattern"
+├── extraction_method    text  -- e.g. "spacy_ner", "manual", "rule_pattern", "structured_field"
 └── extracted_at         timestamptz
 ```
 
